@@ -13,6 +13,14 @@ class Logo extends React.Component {
     }
 }
 
+class FoodList extends React.Component {
+    render() {
+        return(
+            <View></View>
+        )
+    }
+}
+
 const styles = StyleSheet.create({
     exemple1: {
         marginTop: 20,
@@ -20,4 +28,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default Logo
+export default {Logo, FoodList}
