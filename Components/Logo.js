@@ -1,3 +1,5 @@
+// Logo in-App, en haut à gauche
+
 import React from 'react'
 import { StyleSheet, View, Text } from 'react-native'
 
@@ -5,7 +7,7 @@ class Logo extends React.Component {
     render() {
         return(
             <View style={{marginLeft:10}}>
-                <Text style={{fontSize: 21, color:'white'}}>
+                <Text style={styles.textstyle}>
                     FindMyFood
                 </Text>
             </View>
@@ -13,19 +15,11 @@ class Logo extends React.Component {
     }
 }
 
-class FoodList extends React.Component {
-    render() {
-        return(
-            <View></View>
-        )
-    }
-}
-
 const styles = StyleSheet.create({
-    exemple1: {
-        marginTop: 20,
-        backgroundColor: "blue"
+    textstyle: {
+        fontSize: 21, 
+        color:'white'
     }
 })
 
-export default {Logo, FoodList}
+export default Logo

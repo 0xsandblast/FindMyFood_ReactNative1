@@ -1,22 +1,30 @@
 
 import React from 'react'
-import { View } from 'react-native'
-import Logo from './Components/Compo'
+import { View, StyleSheet, Text } from 'react-native'
+import Navigator from './Navigation/navGlobal';
+import Logo from './Components/Logo'
 
-export default class App extends React.Component {
-  render() {
-    return (
-        <View id="main" style={{flex: 1}}>
-            <View id="head" style={{flex: 1, backgroundColor: '#FFCD00', marginTop: 20, justifyContent: 'center'}}>
-                <Logo/>
-            </View>
+export default function App() {
+  return (
+    <View style={{flex:1}}>
 
-            <View id="body" style={{flex: 8}}>
-            </View>
+      {/*StatusBar ??? */}
 
-            <View id="bottom" style={{flex:1, backgroundColor: '#FFCD00'}}>
-            </View>
-        </View>
-    )
-  }
+      <Navigator/>
+    </View>
+  );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex:1,
+    justifyContent:'center',
+    alignItems:'center',
+  },
+  barre: {
+    flex: 1,
+    backgroundColor: '#FFCD00',
+    marginTop: 20,
+    justifyContent: 'center'
+  }
+})
