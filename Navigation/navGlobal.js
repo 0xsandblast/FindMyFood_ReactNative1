@@ -3,11 +3,11 @@ import { View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import HomeScreen from '../screens/1Home';
-import MapScreen from '../screens/2Map';
-import PublishScreen from '../screens/3Publish';
-import MessageScreen from '../screens/4Message';
-import ProfileScreen from '../screens/5Profile';
+import HomeScreen from '../screens/1Home/Home';
+import MapScreen from '../screens/2Map/Map';
+import PublishScreen from '../screens/3Publish/Publish';
+import MessageScreen from '../screens/4Message/Message';
+import ProfileScreen from '../screens/5Profile/Profile';
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
@@ -33,7 +33,7 @@ class Navigator extends React.Component {
                             }
                             
                             else if (route.name === 'PublishScreen') {
-                            iconName = focused ? 'camera' : 'camera-outline';
+                            iconName = focused ? 'add-circle' : 'add-circle-outline';
                             }
                             
                             else if (route.name === 'MessageScreen') {
@@ -44,7 +44,7 @@ class Navigator extends React.Component {
                             iconName = focused ? 'person-circle' : 'person-circle-outline';
                             }
                 
-                            return <Ionicons name={iconName} size={31} color='white' />;
+                            return <Ionicons name={iconName} size={32} color='white' />;
                         },
                         
                         })}
@@ -58,7 +58,7 @@ class Navigator extends React.Component {
                     <Tab.Screen name="HomeScreen" component={HomeScreen}/>
                     <Tab.Screen name="MapScreen" component={MapScreen} />
                     <Tab.Screen name="PublishScreen" component={PublishScreen} />
-                    <Tab.Screen name="MessageScreen" component={MessageScreen} />
+                    <Tab.Screen name="MessageScreen" component={MessageScreen} options={{tabBarBadge: 2}} />
                     <Tab.Screen name="ProfileScreen" component={ProfileScreen} />
                 </Tab.Navigator>
             </NavigationContainer>

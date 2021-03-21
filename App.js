@@ -1,16 +1,27 @@
-
-import React from 'react'
-import { View, StyleSheet, Text } from 'react-native'
+import React from 'react';
+import { View, StyleSheet } from 'react-native';
 import Navigator from './Navigation/navGlobal';
-import Logo from './Components/Logo'
+
+import AppLoading from 'expo-app-loading';
+import { useFonts, Yellowtail_400Regular } from '@expo-google-fonts/yellowtail';
 
 export default function App() {
+
+  let [fontsLoaded] = useFonts({
+    Yellowtail_400Regular,
+  });
+
+  if(!fontsLoaded) {
+    return(
+      <AppLoading/>
+    );
+  }
+
   return (
     <View style={{flex:1}}>
 
-      {/*StatusBar ??? */}
-
       <Navigator/>
+
     </View>
   );
 }
@@ -26,5 +37,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFCD00',
     marginTop: 20,
     justifyContent: 'center'
+  },
+  text: {
+    fontSize:40,
+    fontFamily:'Yellowtail_400Regular',
   }
 })
