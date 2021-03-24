@@ -1,7 +1,9 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
 import Header from '../../Header/Header';
 import ItemHomeList from './ItemHomeList';
+
+import foods from '../../assets/data/dataFMF.json';
 
 class HomeScreen extends React.Component {
     render() {
@@ -9,9 +11,18 @@ class HomeScreen extends React.Component {
             <View title="Menu" style={styles.container}>
                 <Header/>
                 
-                <View style={styles.screenGlobal}>
-                    <ItemHomeList />
-                </View>
+                <FlatList
+                    numColumns={1}
+                    data={foods}
+                    keyExtractor={(item) => item.id.toString()}
+                    renderItem={({item}) => 
+                        <TouchableOpacity>
+                            <ItemHomeList food={item} />
+                        </TouchableOpacity>
+                    }
+                >
+                    
+                </FlatList>
             </View>
         );
     }
@@ -22,9 +33,5 @@ export default HomeScreen;
 const styles = StyleSheet.create({
     container: {
         flex:1,
-    },
-    screenGlobal: {
-        flex:1,
-        padding:10,
     }
 });

@@ -58,7 +58,6 @@ const styles = StyleSheet.create({
     statusBar: {
         height:20,
         backgroundColor:'#C99700',
-        /*C99700*/
     },
 
     textLogo: {
