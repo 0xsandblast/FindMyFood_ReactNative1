@@ -4,6 +4,15 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import images from '../../assets/data/dataIMG';
 
+class ListTitle extends React.Component {
+    render() {
+        return (
+            <Text style={styles.homeTitle} >Les plats les plus chauds de ta région</Text>
+        );
+    }
+}
+
+
 class ItemHomeList extends React.Component {
     render() {
 
@@ -46,14 +55,21 @@ class ItemHomeList extends React.Component {
     }
 }
 
-export default ItemHomeList;
+export { ItemHomeList, ListTitle }
 
 const styles = StyleSheet.create({
+    homeTitle: {
+        fontFamily:'OpenSans_700Bold',
+        fontSize:18,
+        color:'#0047BB',
+        marginTop:15,
+        marginLeft:15,
+    },
     globalItem:{
         height:200,
         borderRadius:20,
 
-        marginTop:10,
+        marginTop:15,
         marginLeft:10,
         marginRight:10
     },
@@ -71,11 +87,11 @@ const styles = StyleSheet.create({
         top:11,
         left:11,
 
-        width: 50,
-        height: 50,
+        width: 40,
+        height: 40,
         borderRadius: 150 / 2,
         overflow: 'hidden',
-        borderWidth: 2,
+        borderWidth: 1,
         borderColor: '#FFCD00',
     },
     leftText: {
