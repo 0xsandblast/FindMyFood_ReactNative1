@@ -1,10 +1,14 @@
+import { useNavigation } from '@react-navigation/core';
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-class Header extends React.Component {
-    render() {
+const Header = (props) => {
+
+    const navigation = useNavigation();
+
+
         return (
             <View style={styles.headerGlobal} >
 
@@ -12,9 +16,9 @@ class Header extends React.Component {
 
                 <View style={styles.headerInner} >
                     {/*Logo*/}
-                    <View>
-                        <Text style={styles.textLogo} >FindMyFood </Text>
-                    </View>
+                    <TouchableOpacity onPress={()=> navigation.navigate('HomeScreen') } >
+                        <Text style={styles.textLogo}>FindMyFood </Text>
+                    </TouchableOpacity>
 
                     {/*Coins*/}
 
@@ -34,7 +38,6 @@ class Header extends React.Component {
 
             </View>
         );
-    }
 }
 
 export default Header;
