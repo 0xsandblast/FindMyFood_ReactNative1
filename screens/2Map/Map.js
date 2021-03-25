@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import MapView from 'react-native-maps';
+import { View, StyleSheet, Dimensions } from 'react-native';
 import Header from "../../Header/Header";
 
 class MapScreen extends React.Component {
@@ -7,11 +8,16 @@ class MapScreen extends React.Component {
         return (
             <View style={styles.container}>
                 <Header />
-                <View style={styles.screenGlobal}>
-                    <Text>
-                        Map Screen
-                    </Text>
-                </View>
+
+                <MapView 
+                    style={styles.map}
+                    initialRegion={{
+                        latitude: 48.845527435782266,
+                        longitude: 2.3280244984702856,
+                        latitudeDelta: 0.08,
+                        longitudeDelta: 0.08,
+                      }}
+                />
             </View>
         );
     }
@@ -23,9 +29,8 @@ const styles = StyleSheet.create({
     container: {
         flex:1,
     },
-    screenGlobal: {
-        flex:1,
-        justifyContent:'center',
-        alignItems:'center',
-    }
+    map: {
+        width: Dimensions.get('window').width,
+        height: Dimensions.get('window').height,
+    },
 });

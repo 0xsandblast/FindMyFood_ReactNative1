@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import Navigator from './Navigation/navGlobal';
+import TabsNavigator from './Navigation/navGlobal';
 
 import AppLoading from 'expo-app-loading';
 import { useFonts } from 'expo-font';
@@ -23,7 +23,7 @@ export default function App() {
   return (
     <View style={{flex:1}}>
 
-      <Navigator/>
+      <TabsNavigator/>
 
     </View>
   );
