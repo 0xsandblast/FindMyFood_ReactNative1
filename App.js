@@ -1,11 +1,13 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import TabsNavigator from './Navigation/navGlobal';
+import NavGlobalStack from './Navigation/NavGlobalStack';
 
 import AppLoading from 'expo-app-loading';
 import { useFonts } from 'expo-font';
 import { Yellowtail_400Regular } from '@expo-google-fonts/yellowtail';
 import {  OpenSans_600SemiBold, OpenSans_700Bold } from '@expo-google-fonts/open-sans';
+
+
 export default function App() {
 
   let [fontsLoaded] = useFonts({
@@ -16,14 +18,14 @@ export default function App() {
 
   if(!fontsLoaded) {
     return(
-      <AppLoading/>
+      <AppLoading autoHideSplash={true} />
     );
   }
 
   return (
     <View style={{flex:1}}>
 
-      <TabsNavigator/>
+      <NavGlobalStack />
 
     </View>
   );

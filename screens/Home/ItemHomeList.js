@@ -18,18 +18,15 @@ class ItemHomeList extends React.Component {
 
         const food = this.props.food;
 
-        const id = food.id
-        const foodId = food.foodId;
-
         return (
             <View style={styles.globalItem} >
                 <ImageBackground 
                     style={{ flex:1 }} 
-                    source={images.platsIm[foodId]}
+                    source={images.platsIm[food.foodId]}
                     imageStyle={styles.imgItem}
                 >
                     <View style={styles.imgInner}> 
-                        <Image style={styles.profilePic} source={images.profileIm[id]} />
+                        <Image style={styles.profilePic} source={images.profileIm[food.id]} />
 
                         <View style={styles.leftText} >
                             <View style={styles.viewTimeSpace} >
@@ -45,7 +42,7 @@ class ItemHomeList extends React.Component {
                         </View>
 
                         <View style={styles.boxPortions} >
-                            <Text style={styles.textPortions} >{food.portions.toString()} portion(s)</Text>
+                            <Text style={styles.textPortions} >{food.portions.toString()} {(food.portions>1) ? 'portions' : 'portion' }</Text>
                         </View>
 
                     </View>

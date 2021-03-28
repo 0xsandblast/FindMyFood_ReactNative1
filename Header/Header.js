@@ -8,7 +8,6 @@ const Header = (props) => {
 
     const navigation = useNavigation();
 
-
         return (
             <View style={styles.headerGlobal} >
 

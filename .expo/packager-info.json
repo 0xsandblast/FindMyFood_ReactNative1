@@ -1,10 +1,10 @@
 {
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null,
+  "expoServerPort": null,
+  "packagerPort": null,
   "devToolsPort": 19002,
-  "expoServerPort": 19000,
-  "packagerPort": 19000,
   "packagerPid": null,
-  "expoServerNgrokUrl": "https://2r-uzr.clemchpt.findmyfood-reactnative1.exp.direct",
-  "packagerNgrokUrl": "https://packager.2r-uzr.clemchpt.findmyfood-reactnative1.exp.direct",
-  "ngrokPid": 2528,
   "webpackServerPort": null
 }
