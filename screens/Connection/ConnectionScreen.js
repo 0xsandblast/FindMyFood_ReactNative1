@@ -1,11 +1,17 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, Image, KeyboardAvoidingView } from 'react-native';
 
 import NavConnection from '../../Navigation/NavConnection';
 
 function ConnectionScreen() {
     return(
-        <View style={{ flex:1 }} >
+
+
+        <KeyboardAvoidingView 
+            style={{ flex:1 }}
+            behavior={Platform.OS === "ios" ? "padding" : null}
+             >
+
             <View style={styles.bg0} >
                 <View style={styles.upper} >
                     <Text style={styles.txt} >Hello ! Bienvenue sur</Text>
@@ -16,7 +22,8 @@ function ConnectionScreen() {
             <View style={styles.lower} >
                 <NavConnection />
             </View>
-        </View>
+        </KeyboardAvoidingView>
+
     );
 }
 
@@ -32,6 +39,7 @@ const styles = StyleSheet.create({
     },
     bg0: {
         flex:1,
+        justifyContent:'flex-end',
         backgroundColor:'#FFCD00'
     },
     txt:{

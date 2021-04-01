@@ -5,13 +5,14 @@ import NavGlobalStack from './Navigation/NavGlobalStack';
 import AppLoading from 'expo-app-loading';
 import { useFonts } from 'expo-font';
 import { Yellowtail_400Regular } from '@expo-google-fonts/yellowtail';
-import {  OpenSans_600SemiBold, OpenSans_700Bold } from '@expo-google-fonts/open-sans';
+import {  OpenSans_400Regular, OpenSans_600SemiBold, OpenSans_700Bold } from '@expo-google-fonts/open-sans';
 
 
 export default function App() {
 
   let [fontsLoaded] = useFonts({
     Yellowtail_400Regular,
+    OpenSans_400Regular,
     OpenSans_600SemiBold,
     OpenSans_700Bold,
   });

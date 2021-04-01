@@ -1,11 +1,46 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, TextInput, Text, TouchableOpacity, Keyboard, StyleSheet,TouchableWithoutFeedback } from 'react-native';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import { useNavigation } from '@react-navigation/core';
 
 function LogIn() {
-    return(
 
+    const navigation = useNavigation();
+
+    return(
+    
     <View style={styles.global} >
-        <Text>Log In</Text>
+        <TouchableWithoutFeedback  onPress={Keyboard.dismiss} >
+            <View style={styles.boxes} >
+                <View style={styles.inpout} >
+                    <Ionicons name="at-outline" size={30} color='rgba(0, 0, 0, 0.5)' style={{padding:10}}/>
+                    <TextInput
+                        style={styles.text}
+                        placeholder="E-mail"
+                        />
+                </View>
+
+                <View style={styles.inpout} >
+                    <Ionicons name="lock-closed-outline" size={30} color='rgba(0, 0, 0, 0.5)' style={{padding:10}} />
+                    <TextInput
+                        style={styles.text}
+                        placeholder="Mot de passe"
+                        secureTextEntry={true}
+                        />
+                </View>
+            </View>
+        </TouchableWithoutFeedback>
+
+        <TouchableOpacity 
+            style={styles.button}
+            onPress={() => navigation.navigate('NavTabs', { screen: 'HomeScreen' })}
+            >
+
+            <Text style= {styles.textButton}>
+                Se connecter
+            </Text>
+        </TouchableOpacity>
+
     </View>
 
     );
@@ -16,8 +51,41 @@ export default LogIn;
 const styles = StyleSheet.create({
     global: {
         flex:1,
-        alignItems: 'center',
-        justifyContent: 'center',
+        flexDirection:'column',
+        alignItems:'center',
         backgroundColor:'#FFCD00'
+    },
+    boxes: {
+        padding:25,
+    },
+    inpout: {
+        flexDirection:'row',
+        alignContent:'center',
+
+        backgroundColor:'rgba(0, 0, 0, 0.10)',
+        borderRadius:5,
+        borderWidth:1,
+        borderColor:'rgba(0, 0, 0, 0.5)',
+        height: 53,
+        width: 270,
+        margin: 10,
+    },
+    text: {
+        flex:1,
+        fontFamily:'OpenSans_400Regular',
+        fontSize:17,
+    },
+    button: {
+        backgroundColor:'#0047BB',
+        height: 55,
+        width: 270,
+        borderRadius: 50,
+        alignItems:'center',
+        justifyContent:'center',
+    },
+    textButton: {
+        fontFamily: 'OpenSans_700Bold',
+        fontSize: 20,
+        color: 'white',
     }
 })
