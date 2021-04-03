@@ -6,24 +6,23 @@ import NavConnection from '../../Navigation/NavConnection';
 function ConnectionScreen() {
     return(
 
-
         <KeyboardAvoidingView 
-            style={{ flex:1 }}
-            behavior={Platform.OS === "ios" ? "padding" : null}
-             >
+        style={{ flex:1 }}
+        behavior={Platform.OS === "ios" ? "padding" : null}
+         >
+            <View style={{ flex:1 }} >
+                <View style={styles.bg0} >
+                    <View style={styles.upper} >
+                        <Text style={styles.txt} >Hello ! Bienvenue sur</Text>
+                        <Image source={require('../../assets/Images/LogoFMF.png')} style={styles.img} />
+                    </View>
+                </View>
 
-            <View style={styles.bg0} >
-                <View style={styles.upper} >
-                    <Text style={styles.txt} >Hello ! Bienvenue sur</Text>
-                    <Image source={require('../../assets/Images/LogoFMF.png')} style={styles.img} />
+                <View style={styles.lower} >
+                    <NavConnection />
                 </View>
             </View>
-
-            <View style={styles.lower} >
-                <NavConnection />
-            </View>
         </KeyboardAvoidingView>
-
     );
 }
 

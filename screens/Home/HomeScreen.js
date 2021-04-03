@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
 import Header from '../../Header/Header';
 import { ItemHomeList, ListTitle } from './ItemHomeList';
 
@@ -24,9 +24,8 @@ class HomeScreen extends React.Component {
                             <ItemHomeList food={item} />
                         </TouchableOpacity>
                     }
-                >
-                    
-                </FlatList>
+                />
+
             </View>
         );
     }

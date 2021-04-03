@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, TextInput, Text, TouchableOpacity, Keyboard, StyleSheet,TouchableWithoutFeedback } from 'react-native';
+import { View, TextInput, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { useNavigation } from '@react-navigation/core';
 
@@ -10,7 +10,6 @@ function LogIn() {
     return(
     
     <View style={styles.global} >
-        <TouchableWithoutFeedback  onPress={Keyboard.dismiss} >
             <View style={styles.boxes} >
                 <View style={styles.inpout} >
                     <Ionicons name="at-outline" size={30} color='rgba(0, 0, 0, 0.5)' style={{padding:10}}/>
@@ -29,7 +28,6 @@ function LogIn() {
                         />
                 </View>
             </View>
-        </TouchableWithoutFeedback>
 
         <TouchableOpacity 
             style={styles.button}
@@ -82,6 +80,7 @@ const styles = StyleSheet.create({
         borderRadius: 50,
         alignItems:'center',
         justifyContent:'center',
+
     },
     textButton: {
         fontFamily: 'OpenSans_700Bold',
