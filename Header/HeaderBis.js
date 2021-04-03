@@ -1,6 +1,6 @@
-import { useNavigation } from '@react-navigation/core';
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/core';
 
 const HeaderBis = (props) => {
 
