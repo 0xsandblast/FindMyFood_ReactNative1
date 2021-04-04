@@ -22,8 +22,8 @@ function ProfileScreen() {
                 <View style={styles.visibleInfo} >
                     <Image style={styles.img} source={require('../../assets/Images/EMusk.jpg')} />
                     <View style={styles.textName}>
-                        <TextInput style={styles.textUp} selectionColor={'#FFCD00'} >  Nom</TextInput>
-                        <TextInput style={styles.textUp} selectionColor={'#FFCD00'} >  Nom d'utilisateur</TextInput>
+                        <TextInput style={styles.textUp} selectionColor={'#FFCD00'} placeholder="Nom" />
+                        <TextInput style={styles.textUp} selectionColor={'#FFCD00'} placeholder="Nom d'utilisateur" />
                     </View>
                 </View>
 
@@ -91,7 +91,8 @@ const styles = StyleSheet.create({
         borderBottomWidth: 2,
         borderColor:'#FFCD00',
         fontSize:20,
-        color:'rgba(0,0,0,0.3)'
+        color:'rgba(0,0,0,0.3)',
+        paddingLeft:7,
     },
     details: {
         alignItems:'center',
