@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, TextInput, Image, StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { View, TextInput, Image, StyleSheet, Text, TouchableOpacity, ScrollView } from 'react-native';
 import HeaderBis from '../../Header/HeaderBis';
 import details from '../../assets/data/dataDetails.json';
 
@@ -49,9 +49,9 @@ function ProfileScreen() {
                         <Text style={styles.shareListTitle} >Plats que vous avez partagé</Text>
                     </View>
                 </View>
+        
 
             </View>
-
         </View>
     );
 }
