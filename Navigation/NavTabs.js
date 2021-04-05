@@ -4,7 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from '../screens/Home/HomeScreen';
 import MapScreen from '../screens/Map/MapScreen';
 import PublishScreen from '../screens/Publish/PublishScreen';
-import MessageScreen from '../screens/Message/MessageScreen';
+import NavMessage from './NavMessage';
 import NavDetails from './NavDetails';
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -34,7 +34,7 @@ function NavTabs() {
                 iconName = focused ? 'add-circle' : 'add-circle-outline';
                 }
                 
-                else if (route.name === 'MessageScreen') {
+                else if (route.name === 'NavMessage') {
                 iconName = focused ? 'chatbubble' : 'chatbubble-outline';
                 }
                 
@@ -57,7 +57,7 @@ function NavTabs() {
             <Tab.Screen name="HomeScreen" component={HomeScreen}/>
             <Tab.Screen name="MapScreen" component={MapScreen} />
             <Tab.Screen name="PublishScreen" component={PublishScreen} />
-            <Tab.Screen name="MessageScreen" component={MessageScreen} options={{tabBarBadge: 2}} />
+            <Tab.Screen name="NavMessage" component={NavMessage} options={{tabBarBadge: 2}} />
             <Tab.Screen name="NavDetails" component={NavDetails} />
         </Tab.Navigator>
     );

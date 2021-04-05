@@ -12,7 +12,6 @@ export default function NavDetails() {
     <Stack.Navigator headerMode='none' >
         <Stack.Screen name="ProfileScreen" component={ProfileScreen} options={{ headerShown:false }} />
         <Stack.Screen name="PersoInfo" component={PersoInfo} />
-
     </Stack.Navigator>
   );
 }

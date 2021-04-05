@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, KeyboardAvoidingView } from 'react-native';
 
-import NavConnection from '../../Navigation/NavConnection';
+import NavConnection from '../../Navigation/navConnection';
 
 function ConnectionScreen() {
     return(
