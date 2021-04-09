@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, FlatList, Image, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, ScrollView, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/core';
 
 import HeaderBis from '../../Header/HeaderBis';
@@ -15,25 +15,27 @@ function MessageScreen() {
         <View style={styles.container}>
             <HeaderBis />
 
-        {foods.map((food) =>{
-            return(
-                <View key={food.foodId} >
-                    <TouchableOpacity onPress={() => navigation.navigate('ConvMessage', {food})} >
+            <ScrollView>
+            {foods.map((food) =>{
+                return(
+                    <View key={food.foodId} >
+                        <TouchableOpacity onPress={() => navigation.navigate('ConvMessage', {food})} >
 
-                        <View style={styles.item} >
-                            <Image style={styles.img} source={images.platsIm[food.foodId]} />
+                            <View style={styles.item} >
+                                <Image style={styles.img} source={images.platsIm[food.foodId]} />
 
-                            <View style={styles.viewTexts}>
-                                <Text style={styles.textTitle} >{food.title}</Text>
-                                <Text>Dernier message de la conversation</Text>
+                                <View style={styles.viewTexts}>
+                                    <Text style={styles.textTitle} >{food.title}</Text>
+                                    <Text>Dernier message de la conversation</Text>
+                                </View>
+
                             </View>
 
-                        </View>
-
-                    </TouchableOpacity>
-                </View>
-            )
-        })}
+                        </TouchableOpacity>
+                    </View>
+                )
+            })}
+            </ScrollView>
 
         </View>
     );

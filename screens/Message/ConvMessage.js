@@ -1,7 +1,9 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, KeyboardAvoidingView } from 'react-native';
+import { TextInput } from 'react-native-gesture-handler';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { useNavigation } from '@react-navigation/core';
+
 
 
 export default function ConvMessage({ route }) {
@@ -22,7 +24,20 @@ export default function ConvMessage({ route }) {
                 </View>
             </View>
 
-            <Text>Lorem Ipsum</Text>
+            <KeyboardAvoidingView style={styles.innerView} behavior={Platform.OS === "ios" ? "padding" : ""} >
+
+                <View style={styles.conv} >
+                    <Text>*Conversation*</Text>
+                </View>
+                
+                <View style={styles.textBox} >
+                    <TextInput style={styles.msgInput} placeholder="Message..." />
+                </View>
+                
+            </KeyboardAvoidingView>
+
+            
+            
         </View>
     );
 }
@@ -58,5 +73,36 @@ const styles = StyleSheet.create({
     backButton: {
         position:'absolute',
         left:7,
-    }
+    },
+
+    innerView:{
+        flex:1,
+        alignItems:'center',
+        justifyContent:'flex-end',
+    },
+    conv:{
+        flex:1,
+        alignItems:'center',
+        justifyContent:'center',
+
+        width:'95%',
+        margin:10,
+    },
+    textBox: {
+        width: '90%',
+        height: 45,
+        justifyContent:'center',
+        paddingLeft:35,
+        
+        borderWidth:1.5,
+        borderColor:'#FFCD00',
+        borderBottomLeftRadius: 35,
+        borderTopRightRadius:35,
+
+        marginBottom: 10,
+    },
+    msgInput: {
+        fontSize:20,
+        fontFamily:'OpenSans_400Regular_Italic',
+    },
 })

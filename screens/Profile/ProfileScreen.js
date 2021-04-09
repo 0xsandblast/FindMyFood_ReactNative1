@@ -17,7 +17,7 @@ function ProfileScreen() {
 
             <HeaderBis />
 
-            <View style={styles.container}>
+            <ScrollView style={styles.container}>
 
                 <View style={styles.visibleInfo} >
                     <Image style={styles.img} source={require('../../assets/Images/EMusk.jpg')} />
@@ -49,9 +49,9 @@ function ProfileScreen() {
                         <Text style={styles.shareListTitle} >Plats que vous avez partagé</Text>
                     </View>
                 </View>
-        
+                
+            </ScrollView>
 
-            </View>
         </View>
     );
 }
