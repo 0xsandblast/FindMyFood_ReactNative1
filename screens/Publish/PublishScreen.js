@@ -11,10 +11,10 @@ export default function PublishScreen() {
     const navigation = useNavigation();
 
     return (
-        <View style={{ flex:1, backgroundColor:'white' }}>
+        <View style={styles.container}>
             <HeaderBis />
 
-            <Button title="Annuler" onPress={() => navigation.navigate("HomeScreen")} />
+            <Button title="Annuler" onPress={() => navigation.navigate("HomeScreen")} color='#0047BB' />
 
             <View style={styles.imgPost}>
                 <Ionicons name="camera-outline" size={65} color='#C7C7CD' />
@@ -28,12 +28,12 @@ export default function PublishScreen() {
 const styles = StyleSheet.create({
     container: {
         flex:1,
-        justifyContent:'center',
-        alignItems:'center',
-    },
+        backgroundColor:'white'
+    },  
     imgPost: {
         height:210,
         margin:15,
+        marginTop:0,
         borderColor:'#0047BB',
         borderWidth:2,
         borderRadius:20,
